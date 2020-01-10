@@ -1,0 +1,4 @@
+the line commande [crontabi] utilizes to execute repetitive or chronic schedule
+1  --> you can just writing the commande like that ;
+ 	crontab -e
+2  --> m h  dom mon dow   command

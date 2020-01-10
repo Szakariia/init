@@ -1,0 +1,111 @@
+#!/bin/bash
+
+echo  "\x1b[93m Entre password : \x1b[0m" 
+read -s key
+if [ $key != 1337 ]
+then
+	echo "\x1b[31m password incorrect \x1b[0m"
+else
+{
+	clear
+	echo  "\x1b[93m Entre password : \x1b[0m" 
+	echo "\x1b[92m password correct \x1b[0m"
+	echo "\x1b[93m  	             _                                        "
+	echo "  	            | |                  _                    "
+	echo "  	 _ _ _ _____| | ____ ___  ____ _| |_ ___  ____  _   _ "
+	echo "  	| | | | ___ | |/ ___/ _ \|    (_   _/ _ \|    \| | | |"
+	echo "  	| | | | ____| ( (__| |_| | | | || || |_| | | | | |_| |"
+	echo "  	 \___/|_____)\_\____\___/|_|_|_| \__\___/|_|_|_|\__  |"
+	echo "  	        ______ _______ ______  _ ______ _______(____/ "
+	echo "  	       / _____(_______(_____ \| (_____ (_______)      "
+	echo "  	      ( (____  _       _____) | |_____) )  _          "
+	echo "  	       \____ \| |     |  __  /| |  ____/  | |         "
+	echo "  	       _____) | |_____| |  \ \| | |       | |         "
+	echo "  	      (______/ \______|_|   |_|_|_|       |_|   \x1b[0m \x1b[1m by : szakaria \x1b[0m"
+	echo "	                                                          "
+	echo "\x1b[96m ----------------------------------------------------------------------------- \x1b[0m"
+	echo "\x1b[96m |								             | \x1b[0m"	
+	echo "\x1b[96m |								             | \x1b[0m"
+	echo "\x1b[96m |	1 - Delete the cash from your home				     | \x1b[0m"
+	echo "\x1b[96m |								             | \x1b[0m"
+	echo "\x1b[96m |	2 - Open your last session					     | \x1b[0m"
+	echo "\x1b[96m |								             | \x1b[0m"
+	echo "\x1b[96m |	3 - Start to programming the new project in 1337	   	     | \x1b[0m"
+	echo "\x1b[96m |								             | \x1b[0m"
+	echo "\x1b[96m |	4 - Search for someone in intra or Google			     | \x1b[0m"
+	echo "\x1b[96m |								             | \x1b[0m"
+	echo "\x1b[96m |	5 - exit							     | \x1b[0m"
+	echo "\x1b[96m |								             | \x1b[0m"
+	echo "\x1b[96m ----------------------------------------------------------------------------- \x1b[0m"
+	echo "\n\x1b[93m  	>  Chose a service by taping a number  :  \x1b[0m\n" && read -s rep
+	if [ $rep ]
+	then
+	{
+		if [ $rep = 1 ]
+		then
+			echo "\x1b[96m	    >  Sure you want to delete all the files in  ~/Library/**.42_cache_bak* [yn]? \x1b[0m"
+			read -s q
+			if [ $q = y ]
+			then
+				rm -rf ~/Library/**.42_cache_bak*
+				echo "\n\x1b[92m		>  Done .\x1b[0m"
+			else
+				clear && exit
+			fi
+		fi
+
+		if [ $rep = 2 ]
+		then
+			open -a Google\ Chrome http://intra.42.fr
+			open -a Google\ Chrome https://www.youtube.com/channel/UCoRlAJci5T5ano7-yetlzkVg
+			open -a Google\ Chrome https://www.geeksforgeeks.org/
+			open -a Google\ Chrome https://www.youtube.com/
+			open -a Google\ Chrome https://booking.1337.ma/
+			open -a terminal
+			echo "\x1b[92m		>  Done .\x1b[0m"
+			echo "\x1b[92m        >   Welcom to your last session \x1b[0m"
+		fi
+		
+		if [ $rep = 3 ]
+		then
+			{
+				echo "\x1b[96m		>  Enter the name of your New project :"
+				read project
+				cd && cd Desktop && mkdir $project
+				cd $project && touch Makefile && touch main.c && touch $project.h && touch $project.c
+				open -a terminal
+				cd  && cd Desktop/$project
+				echo "\x1b[92m		>  Done .\x1b[0m"
+				echo "\x1b[92m		>  Go ! to work :3 .\x1b[0m"
+			}
+		fi
+		
+		if [ $rep = 4 ]
+		then
+			{
+				echo " \x1b[96m >  Search 1 - intra  or  2 - Google"
+				echo "\n\x1b[93m  	>  Chose a service by taping a number  :  \x1b[0m\n" && read -s repon
+				if [ $repon = 2 ]
+				then
+					echo "\x1b[96m		>  Enter What to look for	   : \x1b[0m" && read sujet
+					open -a Google\ Chrome "https://www.google.com/search?q=$sujet"
+					echo "\x1b[92m		>  Done .\x1b[0m"
+				fi
+
+				if [ $repon = 1 ]
+				then
+					echo "\x1b[96m		>  Enter the name of student : \x1b[0m" && read name
+					open -a Google\ Chrome https://profile.intra.42.fr/users/$name
+					echo "\x1b[92m		>  Done .\x1b[0m"
+				fi
+			}
+		fi
+		
+		if [ $rep = 5 ]
+		then
+			clear && exit
+		fi
+	}
+	fi
+}
+fi

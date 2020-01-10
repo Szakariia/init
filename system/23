@@ -1,0 +1,8 @@
+1 - you add a new user whit commande (sudo adduser [...])
+2 - you update the debian whit commande (sudo apt update)
+3 - you need to install ssh whit commande (sudo apt install ssh)
+4 - and you need too start your ssh whit commande (sudo systemctl start ssh)
+5 - to making sure that your ssh is started you need to run commande (sudo systemctl status ssh)
+6 - you go to auther machine and you need the ip adresse of the first machine and he is name of user
+and you can just run commande (ssh [ip adresse] -l [name of user])
+7 - you enter the passwd of the user .
